@@ -20,7 +20,7 @@ public class Cat {
     public static void main(String[] args) {
         Cat gav = new Cat();
         gav.giveNick("gav");
-        gav.food = "fish";
+        gav.eat("fish");
         gav.show();
     }
 }
