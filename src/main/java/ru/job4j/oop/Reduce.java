@@ -3,8 +3,8 @@ package ru.job4j.oop;
 public class Reduce {
     private int[] array;
 
-    public void to(int[] arrayInput) {
-        this.array = arrayInput;
+    public void to(int[] array) {
+        this.array = array;
     }
 
     public void print() {
@@ -18,8 +18,5 @@ public class Reduce {
         Reduce reduce = new Reduce();
         reduce.to(array);
         reduce.print();
-        /*Прична ошибки была в следующем: */
-        /*в методе to была локальная переменная array, а не поле класса*/
-        /*следовательно, в метод передавалась пустая коллекция*/
     }
 }
