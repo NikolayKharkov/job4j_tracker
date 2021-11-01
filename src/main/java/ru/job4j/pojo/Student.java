@@ -6,8 +6,8 @@ public class Student {
     private String firstName;
     private String lastName;
     private String middleName;
-    private String group;
     private Date receiptDate;
+    private String group;
 
     public String getFirstName() {
         return firstName;
