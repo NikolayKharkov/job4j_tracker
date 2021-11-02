@@ -13,10 +13,10 @@ public class College {
         student.setReceiptDate(new Date());
 
         System.out.println("Информация о студенте:");
-        System.out.printf("ФИО : %s %s %s\n", student.getLastName(),
+        System.out.printf("ФИО : %s %s %s" + System.lineSeparator(), student.getLastName(),
                 student.getFirstName(),
                 student.getMiddleName());
-        System.out.printf("Группа : %s\n", student.getGroup());
-        System.out.printf("Дата зачисления  : %s\n", student.getReceiptDate());
+        System.out.printf("Группа : %s" + System.lineSeparator(), student.getGroup());
+        System.out.printf("Дата зачисления  : %s", student.getReceiptDate());
     }
 }
