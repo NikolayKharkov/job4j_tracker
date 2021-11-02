@@ -17,11 +17,9 @@ public class Library {
         library[0] = iAmLegend;
         library[3] = harryPotter;
         for (int i = 0; i < library.length; i++) {
-            if (library[i].getName().equals("Clean code")) {
+            if ("Clean code".equals(library[i].getName())) {
                 System.out.println(library[i].getName() + " " + library[i].getPages());
             }
-
         }
-
     }
 }
