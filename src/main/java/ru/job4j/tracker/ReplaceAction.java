@@ -9,7 +9,7 @@ public class ReplaceAction implements UserAction {
 
     @Override
     public String name() {
-        return "Replace Item";
+        return "Edit item";
     }
 
     @Override
