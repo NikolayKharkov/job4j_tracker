@@ -11,5 +11,7 @@ public class UsageArrayList {
         for (String name : names) {
             System.out.println(name);
         }
+        String a = "ПАрам парам бум";
+
     }
 }
