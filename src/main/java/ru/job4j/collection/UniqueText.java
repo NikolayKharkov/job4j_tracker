@@ -12,6 +12,7 @@ public class UniqueText {
         for (String word : text) {
             if (!check.contains(word)) {
                 rsl = false;
+                break;
             }
         }
         return rsl;
