@@ -25,6 +25,6 @@ public class ItemAscByNameTest {
                 new Item("Zeboot server", -1)
         );
         Collections.sort(items, new ItemDescByName());
-        assertThat(items.get(0).getName(), is("Abboot"));
+        assertThat(expected.get(0).getName(), is("Abboot"));
     }
 }
