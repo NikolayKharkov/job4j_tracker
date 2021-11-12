@@ -2,7 +2,16 @@ package ru.job4j.bank;
 
 import java.util.Objects;
 
+/**
+ * Класс описывает клиента банка
+ * @author Kharkov Nikolay
+ * @version 1.0
+ */
+
 public class User {
+    /**
+     * Описание клиента дается через имя и паспорт.
+     */
     private String passport;
     private String username;
 
@@ -26,6 +35,10 @@ public class User {
     public void setUsername(String username) {
         this.username = username;
     }
+
+    /**
+     * Override необходим для проверки уникальности паспорта.
+     */
 
     @Override
     public boolean equals(Object o) {

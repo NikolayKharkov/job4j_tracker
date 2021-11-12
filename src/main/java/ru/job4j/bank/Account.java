@@ -1,8 +1,18 @@
 package ru.job4j.bank;
 
 import java.util.Objects;
+/**
+ * Класс описывает аккаунт клиента банка
+ * @author Kharkov Nikolay
+ * @version 1.0
+ */
 
 public class Account {
+    /**
+     * Информация по аккаунту состоит из реквизита и баланса
+     * У клиента может быть несколько аккаунтов
+     */
+
     private String requisite;
     private double balance;
 
@@ -26,6 +36,10 @@ public class Account {
     public void setBalance(double balance) {
         this.balance = balance;
     }
+
+    /**
+     * Override необходим для проверки уникальности реквизита.
+     */
 
     @Override
     public boolean equals(Object o) {
