@@ -2,6 +2,7 @@ package ru.job4j.stream;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Cards {
@@ -25,10 +26,10 @@ public class Cards {
         public static void main(String[] args) {
             Suit[] suits = {Suit.Diamonds, Suit.Hearts, Suit.Spades, Suit.Clubs};
             Value[] values = {Value.V_6, Value.V_7, Value.V_8};
-            Stream.of(suits)
+            List<Card> cards = Stream.of(suits)
                     .flatMap(s -> Stream.of(values)
-                            .map(v -> s + " " + v))
-                    .forEach(System.out::println);
+                            .map(v -> new Card(s, v)))
+                    .collect(Collectors.toList());
         }
     }
 }
