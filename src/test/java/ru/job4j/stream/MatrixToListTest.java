@@ -11,7 +11,7 @@ public class MatrixToListTest {
     @Test
     public void testToList() {
         Integer[][] input = {{1, 8, 3}, {0, 8, -1}};
-        List<Integer> expected = List.of(-1, 0, 1, 3, 8, 8);
+        List<Integer> expected = List.of(1, 8, 3, 0, 8, -1);
         List<Integer> result = MatrixToList.toList(input);
         assertThat(result, is(expected));
     }
