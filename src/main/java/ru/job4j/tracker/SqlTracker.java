@@ -123,13 +123,12 @@ public class SqlTracker implements Store, AutoCloseable {
                      cn.prepareStatement("select * from items where id = ?")) {
             statement.setInt(1, id);
             try (ResultSet resultSet = statement.executeQuery()) {
-                while (resultSet.next()) {
-                    result = new Item(
-                            resultSet.getTimestamp("created").toLocalDateTime(),
-                            resultSet.getInt("id"),
-                            resultSet.getString("name")
-                    );
-                }
+                resultSet.next();
+                result = new Item(
+                        resultSet.getTimestamp("created").toLocalDateTime(),
+                        resultSet.getInt("id"),
+                        resultSet.getString("name")
+                );
             }
         } catch (Exception e) {
             e.printStackTrace();
