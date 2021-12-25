@@ -11,6 +11,14 @@ public class SqlTracker implements Store, AutoCloseable {
 
     private Connection cn;
 
+    public SqlTracker(Connection cn) {
+        this.cn = cn;
+    }
+
+    public SqlTracker() {
+
+    }
+
     public void init() {
         try (InputStream in = SqlTracker
                 .class
@@ -122,8 +130,9 @@ public class SqlTracker implements Store, AutoCloseable {
                      cn.prepareStatement("select * from items where id = ?")) {
             statement.setInt(1, id);
             try (ResultSet resultSet = statement.executeQuery()) {
-                resultSet.next();
-                result = newItem(resultSet);
+                if (resultSet.next()) {
+                    result = newItem(resultSet);
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();
