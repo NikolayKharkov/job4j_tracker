@@ -44,6 +44,7 @@ public class StartUI {
         actions.add(new FindByIdAction(output));
         actions.add(new DeleteAction(output));
         actions.add(new ExitAction(output));
+        actions.add(new MemmoryTestAction(output));
         new StartUI(output).init(input, tracker, actions);
     }
 }
