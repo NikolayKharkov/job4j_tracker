@@ -14,7 +14,7 @@ public class FindByIdActionTest {
     public void whenFindActionIsSuccessfully() {
         Output out = new StubOutput();
         Store tracker = new MemTracker();
-        Item item = new Item("Find item by id");
+        Item item = new Item("Find item by id", "desc");
         tracker.add(item);
         FindByIdAction findByIdAction = new FindByIdAction(out);
         Input input = mock(Input.class);
@@ -30,7 +30,7 @@ public class FindByIdActionTest {
     public void whenFindActionNotSuccessfully() {
         Output out = new StubOutput();
         Store tracker = new MemTracker();
-        Item item = new Item("Find item by id");
+        Item item = new Item("Find item by id", "desc");
         tracker.add(item);
         FindByIdAction findByIdAction = new FindByIdAction(out);
         Input input = mock(Input.class);

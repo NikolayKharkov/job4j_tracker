@@ -11,7 +11,7 @@ public class DeleteActionTest {
     public void whenDeleteActionIsSuccessfully() {
         Output out = new StubOutput();
         Store tracker = new MemTracker();
-        Item item = new Item("Delete item");
+        Item item = new Item("Delete item", "desc");
         tracker.add(item);
         DeleteAction deleteAction = new DeleteAction(out);
         Input input = mock(Input.class);
@@ -26,7 +26,7 @@ public class DeleteActionTest {
     public void whenDeleteActionNotSuccessfully() {
         Output out = new StubOutput();
         Store tracker = new MemTracker();
-        Item item = new Item("Delete item");
+        Item item = new Item("Delete item", "desc1");
         tracker.add(item);
         DeleteAction deleteAction = new DeleteAction(out);
         Input input = mock(Input.class);

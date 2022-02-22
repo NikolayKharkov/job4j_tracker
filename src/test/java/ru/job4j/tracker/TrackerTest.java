@@ -12,7 +12,7 @@ public class TrackerTest {
     @Test
     public void whenTestFindById() {
         MemTracker tracker = new MemTracker();
-        Item bug = new Item("Bug");
+        Item bug = new Item("Bug", "desc");
         Item item = tracker.add(bug);
         Item result = tracker.findById(item.getId());
         assertThat(result.getName(), is(item.getName()));
@@ -21,8 +21,8 @@ public class TrackerTest {
     @Test
     public void whenTestFindAll() {
         MemTracker tracker = new MemTracker();
-        Item first = new Item("First");
-        Item second = new Item("Second");
+        Item first = new Item("First", "desc");
+        Item second = new Item("Second", "desc");
         tracker.add(first);
         tracker.add(second);
         Item result = tracker.findAll().get(0);
@@ -32,13 +32,13 @@ public class TrackerTest {
     @Test
     public void whenTestFindByNameCheckArrayLength() {
         MemTracker tracker = new MemTracker();
-        Item first = new Item("First");
-        Item second = new Item("Second");
+        Item first = new Item("First", "desc");
+        Item second = new Item("Second", "desc");
         tracker.add(first);
         tracker.add(second);
-        tracker.add(new Item("First"));
-        tracker.add(new Item("Second"));
-        tracker.add(new Item("First"));
+        tracker.add(new Item("First", "desc"));
+        tracker.add(new Item("Second", "desc"));
+        tracker.add(new Item("First", "desc"));
         List<Item> result = tracker.findByName(first.getName());
         assertThat(result.size(), is(3));
     }
@@ -46,13 +46,13 @@ public class TrackerTest {
     @Test
     public void whenTestFindByNameCheckSecondItemName() {
         MemTracker tracker = new MemTracker();
-        Item first = new Item("First");
-        Item second = new Item("Second");
+        Item first = new Item("First", "desc");
+        Item second = new Item("Second", "desc");
         tracker.add(first);
         tracker.add(second);
-        tracker.add(new Item("First"));
-        tracker.add(new Item("Second"));
-        tracker.add(new Item("First"));
+        tracker.add(new Item("First", "desc"));
+        tracker.add(new Item("Second", "desc"));
+        tracker.add(new Item("First", "desc"));
         List<Item> result = tracker.findByName(second.getName());
         assertThat(result.get(1).getName(), is(second.getName()));
     }

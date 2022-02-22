@@ -15,7 +15,7 @@ public class MemmoryTestAction implements UserAction {
     @Override
     public boolean execute(Input input, Store tracker) {
         for (int i = 0; i != 100000; i++) {
-            tracker.add(new Item("Test memory"));
+            tracker.add(new Item("Test memory", "Desc1"));
         }
         return true;
     }

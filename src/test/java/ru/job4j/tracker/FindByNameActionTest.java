@@ -13,7 +13,7 @@ public class FindByNameActionTest {
     public void whenFindActionIsSuccessfully() {
         Output out = new StubOutput();
         Store tracker = new MemTracker();
-        Item item = new Item("Found item");
+        Item item = new Item("Found item", "Desc1");
         tracker.add(item);
         FindByNameAction findByNameAction = new FindByNameAction(out);
         Input input = mock(Input.class);
@@ -29,7 +29,7 @@ public class FindByNameActionTest {
     public void whenFindActionNotSuccessfully() {
         Output out = new StubOutput();
         Store tracker = new MemTracker();
-        Item item = new Item("Found item");
+        Item item = new Item("Found item", "Desc1");
         tracker.add(item);
         FindByNameAction findByNameAction = new FindByNameAction(out);
         Input input = mock(Input.class);

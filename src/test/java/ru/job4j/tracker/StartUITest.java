@@ -15,7 +15,7 @@ public class StartUITest {
     public void whenReplaceItemTestOutputIsSuccessfully() {
         Output out = new StubOutput();
         MemTracker tracker = new MemTracker();
-        Item one = tracker.add(new Item("test1"));
+        Item one = tracker.add(new Item("test1", "desc1"));
         String replaceName = "New Test Name";
         Input in = new StubInput(
                 new String[]{"0", String.valueOf(one.getId()), replaceName, "1"}
@@ -67,7 +67,7 @@ public class StartUITest {
     public void whenFindByNameActionTestOutputIsSuccessfully() {
         Output out = new StubOutput();
         MemTracker tracker = new MemTracker();
-        Item one = tracker.add(new Item("test1"));
+        Item one = tracker.add(new Item("test1", "desc1"));
         String findName = "test1";
         Input in = new StubInput(
                 new String[]{"0", findName, "1"}
@@ -94,7 +94,7 @@ public class StartUITest {
     public void whenFindByIdActionTestOutputIsSuccessfully() {
         Output out = new StubOutput();
         MemTracker tracker = new MemTracker();
-        Item one = tracker.add(new Item("test1"));
+        Item one = tracker.add(new Item("test1", "desc2"));
         Input in = new StubInput(
                 new String[]{"0", String.valueOf(1), "1"}
         );

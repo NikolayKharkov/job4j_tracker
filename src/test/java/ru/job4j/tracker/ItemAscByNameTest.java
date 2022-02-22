@@ -13,16 +13,16 @@ public class ItemAscByNameTest {
     @Test
     public void whenDesc() {
         List<Item> items = Arrays.asList(
-                new Item("Fix bugs", 100),
-                new Item("Ampl task", 9),
-                new Item("Zeboot server", -1),
-                new Item("Abboot", 69)
+                new Item("Fix bugs", "100"),
+                new Item("Ampl task", "9"),
+                new Item("Zeboot server", "-1"),
+                new Item("Abboot", "69")
         );
         List<Item> expected = Arrays.asList(
-                new Item("Abboot", 69),
-                new Item("Ampl task", 9),
-                new Item("Fix bugs", 100),
-                new Item("Zeboot server", -1)
+                new Item("Abboot", "69"),
+                new Item("Ampl task", "9"),
+                new Item("Fix bugs", "100"),
+                new Item("Zeboot server", "-1")
         );
         Collections.sort(items, new ItemDescByName());
         assertThat(expected.get(0).getName(), is("Abboot"));
