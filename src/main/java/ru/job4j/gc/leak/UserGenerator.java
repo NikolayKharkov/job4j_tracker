@@ -7,16 +7,16 @@ import java.util.Random;
 
 public class UserGenerator implements Generate {
 
-    private final String pathNames = "src/main/java/ru/job4j/gc/leak/files/names.txt";
-    private final String pathSurnames = "src/main/java/ru/job4j/gc/leak/files/surnames.txt";
-    private final String pathPatrons = "src/main/java/ru/job4j/gc/leak/files/patr.txt";
+    private static final String PATH_NAME = "src/main/java/ru/job4j/gc/leak/files/names.txt";
+    private static final String PATH_SURNAMES = "src/main/java/ru/job4j/gc/leak/files/surnames.txt";
+    private static final String PATH_PATRONS = "src/main/java/ru/job4j/gc/leak/files/patr.txt";
+    private static final int USERS_COUNT = 1000;
     private final String lineSeparator;
-    private final Integer usersCount = 1000;
 
     private List<String> names;
     private List<String> surnames;
     private List<String> patrons;
-    private List<User> users = new ArrayList<>(usersCount);
+    private List<User> users = new ArrayList<>(USERS_COUNT);
     private Random random;
 
     public UserGenerator(Random random, String lineSeparator) {
@@ -28,7 +28,7 @@ public class UserGenerator implements Generate {
     @Override
     public void generate() {
         users.clear();
-        for (int i = 0; i < usersCount; i++) {
+        for (int i = 0; i < USERS_COUNT; i++) {
             StringBuilder userName = new StringBuilder();
             userName
                     .append(random.nextInt(surnames.size()))
@@ -41,9 +41,9 @@ public class UserGenerator implements Generate {
 
     private void readAll() {
         try {
-            names = read(pathNames);
-            surnames = read(pathSurnames);
-            patrons = read(pathPatrons);
+            names = read(PATH_NAME);
+            surnames = read(PATH_SURNAMES);
+            patrons = read(PATH_PATRONS);
         } catch (IOException e) {
             throw new IllegalArgumentException(e);
         }
